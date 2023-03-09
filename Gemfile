@@ -78,3 +78,4 @@ group :test do
 end
 
 gem 'slim'
+gem 'iex-ruby-client'
