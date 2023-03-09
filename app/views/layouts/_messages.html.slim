@@ -1,0 +1,12 @@
+-if notice 
+  .alert.alert-success.alert-dismissible.fade.show[role="alert"]
+    .notice
+      = notice
+      button.btn-close[type="button" data-bs-dismiss="alert" aria-label="Close"]
+
+-if alert 
+  .alert.alert-danger.alert-dismissible.fade.show[role="alert"]
+    .notice
+      = alert
+      button.btn-close[type="button" data-bs-dismiss="alert" aria-label="Close"]
+
