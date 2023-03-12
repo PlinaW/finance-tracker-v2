@@ -1,0 +1,13 @@
+h1 
+  | My Portfolio
+
+.search-area
+  h3
+    | Search Stock
+  = form_with url: "#", method: :get do |f|
+    .form-group.row
+      .col-9.no-right.padding
+        =f.text_field :stock, placeholder: "Stock ticker symbol", autofocus: true, :class=> "form-control form-control-lg"
+      .col-3.no-left.padding
+        =f.button "Search", :class=> "btn btn-success btn-lg"
+
