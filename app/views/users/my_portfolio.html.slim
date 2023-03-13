@@ -4,10 +4,21 @@ h1
 .search-area
   h3
     | Search Stock
-  = form_with url: "#", method: :get do |f|
+  = form_with url: search_stock_path, data: {turbo: false}, method: :get do |f|
     .form-group.row
       .col-9.no-right.padding
         =f.text_field :stock, placeholder: "Stock ticker symbol", autofocus: true, :class=> "form-control form-control-lg"
       .col-3.no-left.padding
-        =f.button "Search", :class=> "btn btn-success btn-lg"
+        =f.submit "Search", :class=> "btn btn-outline-success btn-lg"
 
+- if @stock
+  .card.card-header.results-block
+    strong
+      | Symbol: 
+    = @stock.ticker 
+    strong
+      |   Name: 
+    = @stock.name 
+    strong
+      |   Price: 
+    = @stock.last_price
